@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="flowers.png" type="image/x-icon">
+    <title>Flores Amarillas</title>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+        }
+        
+        body {
+            background: #000;
+            color: #fff;
+            min-height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        /* Efecto de espacio con puntos blancos */
+        .space {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: fall linear infinite;
+            opacity: 0.8;
+        }
+        
+        @keyframes fall {
+            0% {
+                transform: translateY(-10px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+        
+        .container {
+            text-align: center;
+            padding: 20px;
+            max-width: 1000px;
+            z-index: 10;
+        }
+        
+        .title {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            color: yellow;
+            text-shadow: 0 0 10px yellow, 0 0 20px yellow;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 2s, transform 2s;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .title.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .message {
+            font-size: 2rem;
+            margin: 30px 0;
+            color: #fff;
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 2s, transform 2s;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .message.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .message.red {
+            color: yellow;
+            text-shadow: 0 0 10px yellow, 0 0 20px yellow;
+        }
+        
+        .button {
+            margin-top: 50px;
+            opacity: 0;
+            transition: opacity 2s;
+        }
+        
+        .button.visible {
+            opacity: 1;
+        }
+        
+        .btn {
+            background: transparent;
+            border: 2px solid #9900ff;
+            padding: 15px 40px;
+            font-size: 1.5rem;
+            color: #9500ff;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .btn:hover {
+            background: rgba(255, 0, 0, 0.2);
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.9);
+            transform: scale(1.05);
+        }
+        
+        .hacker-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hacker-effect::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 5px;
+            height: 100%;
+            background-color: #a6c91a;
+            animation: blink 0.8s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+        
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .message {
+                font-size: 1.5rem;
+            }
+            
+            .btn {
+                padding: 12px 30px;
+                font-size: 1.2rem;
+            }
+        }
+</style>
+</head> 
+<body>
+    <div class="space" id="space"> 
+        <div class="particle" style="width: 2.18267px; height: 2.18267px; left: 17.2516%; animation-duration: 13.5298s; animation-delay: 3.64348s;"></div>
+<div class="particle" style="width: 1.01711px; height: 1.01711px; left: 74.3648%; animation-duration: 11.7742s; animation-delay: 4.8465s;"></div>
+<div class="particle" style="width: 2.64062px; height: 2.64062px; left: 40.7295%; animation-duration: 14.8431s; animation-delay: 0.0160054s;"></div>
+<div class="particle" style="width: 1.93019px; height: 1.93019px; left: 96.8674%; animation-duration: 13.532s; animation-delay: 4.87393s;"></div>
+<div class="particle" style="width: 2.74904px; height: 2.74904px; left: 58.9134%; animation-duration: 9.90876s; animation-delay: 2.642s;"></div>
+<div class="particle" style="width: 1.74602px; height: 1.74602px; left: 48.1734%; animation-duration: 8.73998s; animation-delay: 1.75114s;"></div>
+<div class="particle" style="width: 2.3606px; height: 2.3606px; left: 59.6118%; animation-duration: 12.2067s; animation-delay: 2.85118s;"></div>
+<div class="particle" style="width: 1.97076px; height: 1.97076px; left: 4.02998%; animation-duration: 7.92736s; animation-delay: 4.22261s;"></div>
+<div class="particle" style="width: 1.69661px; height: 1.69661px; left: 32.8595%; animation-duration: 7.63659s; animation-delay: 0.0429293s;"></div>
+<div class="particle" style="width: 2.6859px; height: 2.6859px; left: 25.7244%; animation-duration: 11.6378s; animation-delay: 3.60516s;"></div>
+<div class="particle" style="width: 2.75131px; height: 2.75131px; left: 74.5992%; animation-duration: 7.20713s; animation-delay: 4.90449s;"></div>
+<div class="particle" style="width: 2.63963px; height: 2.63963px; left: 5.28442%; animation-duration: 7.50299s; animation-delay: 1.39902s;"></div>
+<div class="particle" style="width: 2.50498px; height: 2.50498px; left: 82.7772%; animation-duration: 10.2899s; animation-delay: 2.5623s;"></div>
+<div class="particle" style="width: 2.93922px; height: 2.93922px; left: 31.7251%; animation-duration: 6.81648s; animation-delay: 1.08484s;"></div>
+<div class="particle" style="width: 1.76398px; height: 1.76398px; left: 58.7705%; animation-duration: 7.25643s; animation-delay: 0.767267s;"></div>
+<div class="particle" style="width: 2.19577px; height: 2.19577px; left: 47.5538%; animation-duration: 12.7279s; animation-delay: 3.15246s;"></div>
+<div class="particle" style="width: 2.94497px; height: 2.94497px; left: 14.331%; animation-duration: 14.5038s; animation-delay: 0.535283s;"></div>
+<div class="particle" style="width: 1.71518px; height: 1.71518px; left: 7.62423%; animation-duration: 10.353s; animation-delay: 1.79787s;"></div>
+<div class="particle" style="width: 1.6746px; height: 1.6746px; left: 39.5959%; animation-duration: 9.92109s; animation-delay: 1.00949s;"></div>
+<div class="particle" style="width: 2.61366px; height: 2.61366px; left: 44.9828%; animation-duration: 9.86941s; animation-delay: 0.237541s;"></div>
+<div class="particle" style="width: 1.01864px; height: 1.01864px; left: 84.1725%; animation-duration: 11.52s; animation-delay: 2.62437s;"></div>
+<div class="particle" style="width: 2.49062px; height: 2.49062px; left: 70.5643%; animation-duration: 8.37198s; animation-delay: 0.381013s;"></div>
+<div class="particle" style="width: 2.61272px; height: 2.61272px; left: 45.4835%; animation-duration: 5.05643s; animation-delay: 0.660131s;"></div>
+<div class="particle" style="width: 1.27017px; height: 1.27017px; left: 72.3384%; animation-duration: 5.47012s; animation-delay: 3.40693s;"></div>
+<div class="particle" style="width: 1.58954px; height: 1.58954px; left: 22.8125%; animation-duration: 6.71909s; animation-delay: 2.79425s;"></div>
+<div class="particle" style="width: 1.46205px; height: 1.46205px; left: 76.107%; animation-duration: 5.18552s; animation-delay: 2.44679s;"></div>
+<div class="particle" style="width: 2.71345px; height: 2.71345px; left: 49.8226%; animation-duration: 7.15632s; animation-delay: 1.72846s;"></div>
+<div class="particle" style="width: 2.066px; height: 2.066px; left: 12.0999%; animation-duration: 7.86706s; animation-delay: 4.76128s;"></div>
+<div class="particle" style="width: 1.28024px; height: 1.28024px; left: 34.4437%; animation-duration: 11.9483s; animation-delay: 4.85228s;"></div>
+<div class="particle" style="width: 1.41619px; height: 1.41619px; left: 10.4001%; animation-duration: 6.10761s; animation-delay: 2.00905s;"></div>
+<div class="particle" style="width: 1.35409px; height: 1.35409px; left: 70.0462%; animation-duration: 14.0465s; animation-delay: 3.06253s;"></div>
+<div class="particle" style="width: 1.89203px; height: 1.89203px; left: 40.7397%; animation-duration: 14.2288s; animation-delay: 3.04044s;"></div>
+<div class="particle" style="width: 1.97821px; height: 1.97821px; left: 87.1039%; animation-duration: 6.14902s; animation-delay: 0.972744s;"></div>
+<div class="particle" style="width: 1.37442px; height: 1.37442px; left: 85.0724%; animation-duration: 12.263s; animation-delay: 2.28379s;"></div>
+<div class="particle" style="width: 2.39214px; height: 2.39214px; left: 63.5723%; animation-duration: 7.18672s; animation-delay: 3.74996s;"></div>
+<div class="particle" style="width: 1.69526px; height: 1.69526px; left: 65.9895%; animation-duration: 7.36426s; animation-delay: 0.416257s;"></div>
+<div class="particle" style="width: 1.96122px; height: 1.96122px; left: 0.0980903%; animation-duration: 12.2848s; animation-delay: 3.30386s;"></div>
+<div class="particle" style="width: 1.3263px; height: 1.3263px; left: 71.288%; animation-duration: 7.71651s; animation-delay: 1.87528s;"></div>
+<div class="particle" style="width: 2.83846px; height: 2.83846px; left: 61.6441%; animation-duration: 7.06101s; animation-delay: 1.36779s;"></div>
+<div class="particle" style="width: 1.36011px; height: 1.36011px; left: 31.744%; animation-duration: 8.78011s; animation-delay: 0.737859s;"></div>
+<div class="particle" style="width: 2.74205px; height: 2.74205px; left: 54.2561%; animation-duration: 5.49992s; animation-delay: 3.125s;"></div>
+<div class="particle" style="width: 2.08327px; height: 2.08327px; left: 52.1373%; animation-duration: 10.5572s; animation-delay: 3.87958s;"></div>
+<div class="particle" style="width: 2.20334px; height: 2.20334px; left: 12.0582%; animation-duration: 8.27129s; animation-delay: 2.5933s;"></div>
+    </div>
+    <div class="container">
+    <h1 class="title hacker-effect visible" id="title"> "FELIZ DÍA DE LAS FLORES AMARILLAS"
+    </h1>
+    <p class="message red visible" id="message1">FOR ME BEST FRIENDS</p>
+    <p class="message visible" id="message2"> TENGO UN REGALO ESPECIAL PARA TI</p>
+    <div class="button visible" id="button">
+        <button class="btn" onclick="location.href='index1.html'"> VER TU REGALO 
+        </button>
+     </div>
+    </div>
+    <script>
+        // Crear efecto de espacio con partículas
+        function createSpace() {
+            const space = document.getElementById('space');
+            
+            // Crear partículas
+            for (let i = 0; i < 100; i++) {
+                createParticle(space);
+            }
+            
+            // Continuar creando partículas
+            setInterval(() => {
+                createParticle(space);
+            }, 200);
+        }
+        
+        function createParticle(container) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            
+            // Tamaño aleatorio entre 1 y 3px
+            const size = Math.random() * 2 + 1;
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            
+            // Posición aleatoria en X
+            particle.style.left = Math.random() * 100 + '%';
+            
+            // Duración aleatoria entre 5 y 15 segundos
+            const duration = Math.random() * 10 + 5;
+            particle.style.animationDuration = duration + 's';
+            
+            // Retraso aleatorio
+            particle.style.animationDelay = Math.random() * 5 + 's';
+            
+            container.appendChild(particle);
+            
+            // Eliminar la partícula después de que termine la animación
+            setTimeout(() => {
+                if (particle.parentNode) {
+                    particle.remove();
+                }
+            }, duration * 1000 + 1000);
+        }
+        
+        // Mostrar elementos secuencialmente
+        function showElements() {
+            const title = document.getElementById('title');
+            const message1 = document.getElementById('message1');
+            const message2 = document.getElementById('message2');
+            const button = document.getElementById('button');
+            
+            setTimeout(() => {
+                title.classList.add('visible');
+            }, 1000);
+            
+            setTimeout(() => {
+                message1.classList.add('visible');
+            }, 3000);
+            
+            setTimeout(() => {
+                message2.classList.add('visible');
+            }, 6000);
+            
+            setTimeout(() => {
+                button.classList.add('visible');
+            }, 9000);
+        }
+        
+        // Inicializar
+        window.onload = function() {
+            createSpace();
+            showElements();
+        };
+    
+    </script>
+  </body>
+</html>
